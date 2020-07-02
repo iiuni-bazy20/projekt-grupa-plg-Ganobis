@@ -1,0 +1,9 @@
+Stworzona baza danych przedstawia przykładową baze wycieczek rowerowych, rowerzystów oraz punktów do nocowania. Do zapisywania danych używamy 4 tablei. Pierwsza z nich to tabea z ośrodkami. Znajdziemy w niej id_ośrodka, lokalizacje ośrodka oraz opis. Kolejną tabelą to tabela z wycieczkami. Są w niej id_wycieczki, dystans danej wycieczki oraz punkty przez które ona przechodzi. Trzecią użytą przezemnie tabelą jest tabelka z klientami, czyli rowerzystami. Zapisuje ona id_rowerzysty (czyli jego imię, pseudonim), przebyte przez niego kilomentry oraz ilość tras które zarezerwował. Ostatnią tabelą jest tabela z rezerwacjami. Znajduje się w niej id_rezerwacji, data tej rezerwacji, id_klienta który dokonał rezerwacji w danym miejscu oraz id_ośrodka aby wiadomobyło co to za miejsce.
+Napisany przezemie program w pythonie obsługuje pliki json jako wejście. Program zakłada, że istnieje użytkownik "app" z hasłem "qwerty" oraz baza "student". Zakłada także, że dodano rozszerzenie postgis. Program na wejściu może otrzymać jako pierwsze polecenie --init które zainiciuje baze. Następne argumenty wywołania programu to pliki json. Użyte funkcje w programie to:
+-node - funkcja dodaje do ośrodków nowy ośrodek.
+-catalog - dodaje nową wycieczke do listy wycieczek. Oblicza także długośc trasy.
+-trip - funkja dodaje nową rezerwacje wycieczki przez kolarza. Jeśli rowerzysty nie ma w bazie klientów doda go. Funkja aktualizuje przebyty łączny dystans oraz odbyte wycieczki. Dodaje także automatycznie wszystkie zaplanowane noclegi.
+-closest_nodes - funkcja zwraca 3 najbliższe ośrodki od podaneg punktu geograficznego.
+-guests - funkcja zwraca wszystkich klientów danego ośrodka w danym dniu.
+-cyclist - funkcja zwraca mam najbardziej wytrawnych rowerzystów. 
+-party - zwraca rowerzystów którzy znajdują się w promieniu 20km od jakiegoś podanego rowerzysty w danym dniu. 
